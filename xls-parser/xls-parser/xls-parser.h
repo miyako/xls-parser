@@ -34,6 +34,7 @@
 #endif
 
 #include "xls.h"
+#include <iconv.h>
 
 typedef enum {
     

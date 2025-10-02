@@ -139,6 +139,27 @@ static void document_to_json(Document& document, std::string& text, bool rawText
     }
 }
 
+static std::string conv(const std::string& input, const std::string& charset) {
+    
+    std::string str = input;
+    
+    iconv_t cd = iconv_open("utf-8", charset.c_str());
+    
+    if (cd != (iconv_t)-1) {
+        size_t inBytesLeft = input.size();
+        size_t outBytesLeft = (inBytesLeft * 4)+1;
+        std::vector<char> output(outBytesLeft);
+        char *inBuf = const_cast<char*>(input.data());
+        char *outBuf = output.data();
+        if (iconv(cd, &inBuf, &inBytesLeft, &outBuf, &outBytesLeft) != (size_t)-1) {
+            str = std::string(output.data(), output.size() - outBytesLeft);
+        }
+        iconv_close(cd);
+    }
+    
+    return str;
+}
+
 using namespace xls;
 
 int main(int argc, OPTARG_T argv[]) {
@@ -236,7 +257,12 @@ int main(int argc, OPTARG_T argv[]) {
                         for (xls::DWORD col = 0; col <= pWS->rows.lastcol; ++col) {
                             xlsCell* cell = xls_cell(pWS, row, col);
                             if (cell && cell->str) {
-                                _row.cells.push_back(cell->str);
+                                std::string str = cell->str;
+                                _row.cells.push_back(conv(str, charset));
+                                
+//                                _row.cells.push_back(cell->str);
+//                                char* str = codepage_decode(cell->str, strlen(cell->str), pWB);
+//                                _row.cells.push_back(str);
                             }
                         }
                         sheet.rows.push_back(_row);
