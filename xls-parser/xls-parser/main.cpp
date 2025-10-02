@@ -229,11 +229,11 @@ int main(int argc, OPTARG_T argv[]) {
                     sheet.name = pWB->sheets.sheet[i].name;
                     document.sheets.push_back(sheet);
                     
-                    for (DWORD row = 0; row <= pWS->rows.lastrow; ++row) {
+                    for (xls::DWORD row = 0; row <= pWS->rows.lastrow; ++row) {
                         
                         Row _row;
                         
-                        for (DWORD col = 0; col <= pWS->rows.lastcol; ++col) {
+                        for (xls::DWORD col = 0; col <= pWS->rows.lastcol; ++col) {
                             xlsCell* cell = xls_cell(pWS, row, col);
                             if (cell && cell->str) {
                                 _row.cells.push_back(cell->str);
