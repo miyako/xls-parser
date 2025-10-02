@@ -107,7 +107,7 @@ static void document_to_json(Document& document, std::string& text, bool rawText
                 
                 if(_text.length() != 0){
                     if(multiline) {
-                        _text += "\n";
+                        text += "\n";
                     }
                     text += _text;
                     multiline = true;
