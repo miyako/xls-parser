@@ -2,3 +2,5 @@ xls-parser/.build/*
 xls-parser/.vs/*
 xls-parser/xls-parser/x64/Release/*
 xls-parser/x64/Release/xls-parser.pdb
+xls-parser/x64/Release/xls-parser.exp
+xls-parser/x64/Release/xls-parser.lib
