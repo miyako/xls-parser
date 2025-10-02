@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D114A8012E8EBEEB003242DC /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D114A8002E8EBEEB003242DC /* libiconv.tbd */; };
+		D114A8032E8EC082003242DC /* libiconv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D114A8022E8EC082003242DC /* libiconv.a */; };
+		D114A8052E8EC096003242DC /* libcharset.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D114A8042E8EC096003242DC /* libcharset.a */; };
 		D15189F82E8D6D1B002D38DC /* libjsoncpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D15189F72E8D6D1B002D38DC /* libjsoncpp.a */; };
 		D162433B2E8E3A38000A8A9B /* libxlsreader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D162433A2E8E3A2E000A8A9B /* libxlsreader.a */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,9 @@
 
 /* Begin PBXFileReference section */
 		D114A8002E8EBEEB003242DC /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		D114A8022E8EC082003242DC /* libiconv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiconv.a; path = a/libiconv.a; sourceTree = "<group>"; };
+		D114A8042E8EC096003242DC /* libcharset.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcharset.a; path = a/libcharset.a; sourceTree = "<group>"; };
+		D114A8072E8EC128003242DC /* libcharset.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcharset.tbd; path = usr/lib/libcharset.tbd; sourceTree = SDKROOT; };
 		D15189F72E8D6D1B002D38DC /* libjsoncpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjsoncpp.a; path = a/libjsoncpp.a; sourceTree = "<group>"; };
 		D162433A2E8E3A2E000A8A9B /* libxlsreader.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libxlsreader.a; path = a/libxlsreader.a; sourceTree = "<group>"; };
 		D16478942E611F7700FC9914 /* xls-parser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "xls-parser"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D114A8012E8EBEEB003242DC /* libiconv.tbd in Frameworks */,
+				D114A8052E8EC096003242DC /* libcharset.a in Frameworks */,
+				D114A8032E8EC082003242DC /* libiconv.a in Frameworks */,
 				D162433B2E8E3A38000A8A9B /* libxlsreader.a in Frameworks */,
 				D15189F82E8D6D1B002D38DC /* libjsoncpp.a in Frameworks */,
 			);
@@ -60,6 +65,9 @@
 		D157F30B2E612DD500DF46D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D114A8072E8EC128003242DC /* libcharset.tbd */,
+				D114A8042E8EC096003242DC /* libcharset.a */,
+				D114A8022E8EC082003242DC /* libiconv.a */,
 				D114A8002E8EBEEB003242DC /* libiconv.tbd */,
 				D162433A2E8E3A2E000A8A9B /* libxlsreader.a */,
 				D15189F72E8D6D1B002D38DC /* libjsoncpp.a */,
@@ -279,7 +287,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D164789E2E61216B00FC9914 /* xls-config.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = x86_64;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y69CWUC25B;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -297,7 +305,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D164789E2E61216B00FC9914 /* xls-config.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = x86_64;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y69CWUC25B;
 				ENABLE_HARDENED_RUNTIME = YES;
