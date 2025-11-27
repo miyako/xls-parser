@@ -5,3 +5,13 @@
  
 # xls-parser
 CLI tool to extract text from XLS
+
+```
+text extractor for xls documents
+
+ -i path    : document to parse
+ -o path    : text output (default=stdout)
+ -          : use stdin for input
+ -r         : raw text output (default=json)
+ -c charset : charset (default=iso-8859-1)
+```
